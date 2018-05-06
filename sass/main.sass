@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:200,400')
+
+@mixin abs
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+
+@mixin range($from, $to: -1)
+  @if ($to == -1)
+    @media screen and (min-width: #{$from})
+      @content
+  @else
+    @media screen and (min-width: #{$from}) and (max-width: #{$to})
+      @content
+
+@mixin break-grid($prop, $pb, $pm, $bb, $bm, $n)
+  @for $i from 1 through $n
+    $lb: $bb + $bm * ($i - 2) + 1
+    $ub: $bb + $bm * ($i - 1)
+    @if $i == 1
+      $lb: 0
+    @if $i == $n
+      $ub: -1
+    +range($lb, $ub)
+      #{$prop}: ($i - 1) * $pm + $pb
+
+body, html
+  margin: 0
+  width: 100%
+  height: 100%
+  font-family: 'Source Code Pro', 'Lato', 'Helvetica Neue', sans-serif
+  +break-grid("font-size", 12px, 5px, 400px, 400px, 5)
+
+*
+  user-select: none
+  cursor: default
+
+#canvas
+  +abs
+
+#title-wrapper
+  +abs
+  display: flex
+  justify-content: center
+  align-items: center
+  background-color: white
+
+  .text
+    align-self: center
+    font-weight: 100
+    font-size: 3em
+    color: #2288FF
+
+#info-wrapper
+  font-size: 0.75em
+  position: absolute
+  bottom: 5%
+  right: 5%
+  color: rgb(154, 154, 154)
+
+  a
+    color: rgb(105, 105, 105)
+    cursor: pointer

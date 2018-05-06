@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro:200,400");
+body,
+html {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Source Code Pro', 'Lato', 'Helvetica Neue', sans-serif;
+}
+
+@media screen and (min-width: 0) and (max-width: 400px) {
+  body,
+  html {
+    font-size: 12px;
+  }
+}
+
+@media screen and (min-width: 401px) and (max-width: 800px) {
+  body,
+  html {
+    font-size: 17px;
+  }
+}
+
+@media screen and (min-width: 801px) and (max-width: 1200px) {
+  body,
+  html {
+    font-size: 22px;
+  }
+}
+
+@media screen and (min-width: 1201px) and (max-width: 1600px) {
+  body,
+  html {
+    font-size: 27px;
+  }
+}
+
+@media screen and (min-width: 1601px) {
+  body,
+  html {
+    font-size: 32px;
+  }
+}
+
+* {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+}
+
+#canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#title-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: white;
+}
+
+#title-wrapper .text {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  align-self: center;
+  font-weight: 100;
+  font-size: 3em;
+  color: #2288FF;
+}
+
+#info-wrapper {
+  font-size: 0.75em;
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  color: #9a9a9a;
+}
+
+#info-wrapper a {
+  color: dimgray;
+  cursor: pointer;
+}
